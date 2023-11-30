@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     // Fetch all courses
     axios
-      .get("http://localhost:3000/api/courses")
+      .get("https://turquoise-jay-tutu.cyclic.app/api/courses")
       .then((response) => {
         setCourses(response.data);
       })
@@ -21,7 +21,7 @@ const App = () => {
 
     // Fetch user profile
     axios
-      .get("http://localhost:3000/api/users/profile", {
+      .get("https://turquoise-jay-tutu.cyclic.app/api/users/profile", {
         headers: {
           Authorization: `Bearer YOUR_JWT_TOKEN`, // Replace with your actual token
         },
