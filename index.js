@@ -1,4 +1,5 @@
 const express = require("express");
+const verifyToken = require("./middleware/auth");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 require("dotenv").config();
@@ -23,8 +24,6 @@ app.use("/api/users", require("./routes/users"));
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-const verifyToken = require("./middleware/auth");
 
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/courses", verifyToken, require("./routes/courses")); // Protect courses route
